@@ -13,7 +13,10 @@
 \setminted[gap]{bgcolor=gray!10,mathescape}
 
 \def\Circled#1{\Large \textcircled{\small \bf #1}}
-\def\exercise#1#2{\inputminted{gap}{#1/#2.g} \inputminted{gap}{#1/#2.txt}}
+\def\exercise#1#2{%
+  \inputminted{gap}{gap/#1/#2.g}%
+  \inputminted{gap}{answers/#1/#2.txt}%
+}
 
 \title{%
   Exercises from \\

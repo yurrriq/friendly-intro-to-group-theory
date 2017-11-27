@@ -1,13 +1,14 @@
 gap ?= gap.sh
 
 
-.SUFFIXES: .g .pdf .tex .txt
+.SUFFIXES: .tex .pdf
 
 .tex.pdf:
 	latexmk -f -gg -shell-escape -pdf $<
 
-.g.txt:
+
+answers/%.txt: gap/%.g
 	${gap} -q -x 64 <$< >$@
 
 
-all: $(wildcard **/*.txt) exercises.pdf
+all: $(patsubst gap/%.g,answers/%.txt,$(wildcard gap/**/*.g)) exercises.pdf
