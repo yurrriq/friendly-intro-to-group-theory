@@ -12,7 +12,8 @@
 \usemintedstyle{emacs}
 \setminted[gap]{bgcolor=gray!10,mathescape}
 
-\def\Circled#1{\Large \textcircled{\small \bf #1}}
+\def\Circled#1{{\Large \textcircled{\small \bf #1}}}
+
 \def\exercise#1#2{%
   \inputminted{gap}{gap/#1/#2.g}%
   \inputminted{gap}{answers/#1/#2.txt}%
