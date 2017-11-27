@@ -6,7 +6,9 @@
 \usepackage{geometry}
 \geometry{a4paper}
 
-\usepackage{enumerate}
+\usepackage[counterclockwise]{rotating}
+
+\usepackage{amssymb,ebproof,enumerate}
 
 \usepackage{minted}
 \usemintedstyle{emacs}
@@ -45,31 +47,60 @@
   \item \exercise{1.1}{1b}
   \item \exercise{1.1}{1c}
   \end{enumerate} \newpage
-\item {\sl Proof.} \Circled{2} Let $x \in R \cup (S \cap T)$.
-  By definition $x \in R$ or $x \in S \cap T$. \vskip 1em
 
-  \underline{Case 1: $x \in R$}
-  Since $x \in R$, it follows that $x \in R \cup S$ and $x \in R \cup T$.
-  Thus we have $x \in (R \cup S) \cap (R \cup T)$.
-  \vskip 1em
+\item
+  \begin{sideways}
+    \begin{minipage}{\textheight}
+      \begin{proof}[Proof of \Circled{2}]
+        \begin{prooftree*}
+          \infer0{x \in R \cup (S \cap T)} \hypo{x \in R}
+          \infer2{x \in (R \cup S) \cap (R \cup T)}
 
-  \underline{Case 2: $x \in S \cap T$}
-  By definition $x \in S$ and $x \in T$. It follows that $x \in R \cup S$ and
-  $x \in R \cup T$. Thus we have $x \in (R \cup S) \cap (R \cup T)$.
-  \vskip 1em
+          \infer0{x \in R \cup (S \cap T)} \hypo{x \in S \cap T}
+          \infer2{x \in (R \cup S) \cap (R \cup T)}
 
-  Together, Case 1 and Case 2 demonstrate that if $x \in R \cup (S \cap T)$,
-  then $x \in (R \cup S) \cap (R \cup T)$ as well, which proves that
-  $R \cup (S \cap T) \subseteq (R \cup S) \cap (R \cup T)$.
-  \vskip 1em
+          \infer2{R \cup (S \cap T) \subseteq (R \cup S) \cap (R \cup T)}
 
-  For the other containment, suppose that $x \in (R \cup S) \cap (R \cup T)$.
-  Then specifically $x \in R \cup S$ and $x \in R \cup T$. These imply
-  respectively that $x \in R$ or $x \in S$ and that $x \in R$ or $x \in T$.
-  Hence, $x \in R \cup (S \cap T)$ and we have
-  $(R \cup S) \cap (R \cup T) \subseteq R \cup (S \cap T)$.
-  By double containment we have shown that
-  $R \cup (S \cap T) = (R \cup S) \cap (R \cup T)$ as desired. \qed
+
+          \infer0{x \in R \cup (S \cap T)}
+          \infer1{x \in (R \cup S) \cap (R \cup T)}
+          \infer1{R \cup (S \cap T) \subseteq (R \cup S) \cap (R \cup T)}
+
+          \infer2{R \cup (S \cap T) = (R \cup S) \cap (R \cup T)}
+        \end{prooftree*}
+      \end{proof}
+
+      \begin{proof}[Proof of \Circled{4}]
+        \begin{prooftree*}
+          \infer0{x \in R \setminus (S \cap T)}
+          \hypo{x \not \in S}
+          \infer2{x \in R \setminus S}
+
+          \infer0{x \in R \setminus (S \cap T)}
+          \hypo{x \not \in T}
+          \infer2{x \in R \setminus T}
+
+          \infer2{x \in (R \setminus S) \cup (R \setminus T)}
+          \infer1{R \setminus (S \cap T) \subseteq (R \setminus S) \cup (R \setminus T)}
+
+
+          \infer0{x \in (R \setminus S) \cup (R \setminus T)}
+          \hypo{x \in R \setminus S}
+          \infer2{x \in R\ \land\ x \not \in S}
+
+          \infer0{x \in (R \setminus S) \cup (R \setminus T)}
+          \hypo{x \in R \setminus T}
+          \infer2{x \in R\ \land\ x \not \in T}
+
+          \infer2{x \in R \setminus (S \cap T)}
+          \infer1{(R \setminus S) \cup (R \setminus T) \subseteq R \setminus (S \cap T)}
+
+
+          \infer2{R \setminus (S \cap T) = (R \setminus S) \cup (R \setminus T)}
+        \end{prooftree*}
+      \end{proof}
+    \end{minipage}
+  \end{sideways}
 \end{enumerate}
 
 \end{document}
