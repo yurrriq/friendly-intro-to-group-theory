@@ -61,6 +61,69 @@
       \inputproof{1.1}{4}
     \end{minipage}
   \end{sideways}
+\item
+  \begin{enumerate}[(a)]
+  \item
+    \begin{proof}
+      \begin{prooftree*}
+        \hypo{x \in (A \cup B) \cup C}
+        \infer1{x \in A \cup B \lor x \in C}
+        \infer1{x \in A \lor x \in B \lor x \in C}
+        \infer1{x \in A \lor x \in B \cup C}
+        \infer1{x \in A \cup (B \cup C)}
+        \infer1{(A \cup B) \cup C \subseteq A \cup (B \cup C)}
+
+        \hypo{x \in A \cup (B \cup C)}
+        \infer1{x \in A \lor x \in (B \cup C)}
+        \infer1{x \in A \lor x \in B \lor x \in C}
+        \infer1{x \in A \cup B \lor x \in C}
+        \infer1{x \in (A \cup B) \cup C}
+        \infer1{A \cup (B \cup C) \subseteq (A \cup B) \cup C}
+
+        \infer2{(A \cup B) \cup C = A \cup (B \cup C)}
+      \end{prooftree*}
+    \end{proof}
+  \item
+    \begin{proof}
+      \begin{prooftree*}
+        \hypo{x \in (A \cap B) \cap C}
+        \infer1{x \in A \cap B \land x \in C}
+        \infer1{x \in A \land x \in B \land x \in C}
+        \infer1{x \in A \land x \in B \cap C}
+        \infer1{x \in A \cap (B \cap C)}
+        \infer1{(A \cap B) \cap C \subseteq A \cap (B \cap C)}
+
+        \hypo{x \in A \cap (B \cap C)}
+        \infer1{x \in A \land x \in (B \cap C)}
+        \infer1{x \in A \land x \in B \land x \in C}
+        \infer1{x \in A \cap B \land x \in C}
+        \infer1{x \in (A \cap B) \cap C}
+        \infer1{A \cap (B \cap C) \subseteq (A \cap B) \cap C}
+
+        \infer2{(A \cap B) \cap C = A \cap (B \cap C)}
+      \end{prooftree*}
+    \end{proof}
+  \item
+    \begin{proof}
+      \begin{prooftree*}
+        \hypo{x \in A \setminus (A \setminus B)}
+        \infer1{x \in A \land x \not \in (A \setminus B)}
+        % \infer1{x \in A \land \neg (x \in A \land x \not \in B)}
+        \infer1{x \in A \land (x \not \in A \lor x \in B)}
+        \infer1{x \in A \land x \in B}
+        \infer1{x \in A \cap B}
+        \infer1{A \setminus (A \setminus B) \subseteq A \cap B}
+
+        \hypo{x \in A \cap B}
+        \infer1{x \in A \land x \in B}
+        \infer1{x \in A \land x \not \in A \setminus B}
+        \infer1{x \in A \setminus (A \setminus B)}
+        \infer1{A \cap B \subseteq A \setminus (A \setminus B)}
+
+        \infer2{A \setminus (A \setminus B) = A \cap B}
+      \end{prooftree*}
+    \end{proof}
+  \end{enumerate}
 \end{enumerate}
 
 \end{document}
