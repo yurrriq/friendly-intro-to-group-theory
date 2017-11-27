@@ -1,0 +1,71 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{geometry}
+\geometry{a4paper}
+
+\usepackage{enumerate}
+
+\usepackage{minted}
+\usemintedstyle{emacs}
+\setminted[gap]{bgcolor=gray!10,mathescape}
+
+\def\Circled#1{\Large \textcircled{\small \bf #1}}
+\def\exercise#1#2{\inputminted{gap}{#1/#2.g} \inputminted{gap}{#1/#2.txt}}
+
+\title{%
+  Exercises from \\
+  {\sl A Friendly Introduction to Group Theory} \\
+  by David Nash%
+}
+
+\author{Eric Bailey}
+\date{November 26, 2017}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Preliminaries}
+
+\subsection{Sets Exercises}
+
+\begin{enumerate}[{\bf 1.}]
+\item
+  \begin{enumerate}[(a)]
+  \item \exercise{1.1}{1a} \newpage
+  \item \exercise{1.1}{1b}
+  \item \exercise{1.1}{1c}
+  \end{enumerate} \newpage
+\item {\sl Proof.} \Circled{2} Let $x \in R \cup (S \cap T)$.
+  By definition $x \in R$ or $x \in S \cap T$. \vskip 1em
+
+  \underline{Case 1: $x \in R$}
+  Since $x \in R$, it follows that $x \in R \cup S$ and $x \in R \cup T$.
+  Thus we have $x \in (R \cup S) \cap (R \cup T)$.
+  \vskip 1em
+
+  \underline{Case 2: $x \in S \cap T$}
+  By definition $x \in S$ and $x \in T$. It follows that $x \in R \cup S$ and
+  $x \in R \cup T$. Thus we have $x \in (R \cup S) \cap (R \cup T)$.
+  \vskip 1em
+
+  Together, Case 1 and Case 2 demonstrate that if $x \in R \cup (S \cap T)$,
+  then $x \in (R \cup S) \cap (R \cup T)$ as well, which proves that
+  $R \cup (S \cap T) \subseteq (R \cup S) \cap (R \cup T)$.
+  \vskip 1em
+
+  For the other containment, suppose that $x \in (R \cup S) \cap (R \cup T)$.
+  Then specifically $x \in R \cup S$ and $x \in R \cup T$. These imply
+  respectively that $x \in R$ or $x \in S$ and that $x \in R$ or $x \in T$.
+  Hence, $x \in R \cup (S \cap T)$ and we have
+  $(R \cup S) \cap (R \cup T) \subseteq R \cup (S \cap T)$.
+  By double containment we have shown that
+  $R \cup (S \cap T) = (R \cup S) \cap (R \cup T)$ as desired. \qed
+\end{enumerate}
+
+\end{document}
