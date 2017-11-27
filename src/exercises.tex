@@ -1,0 +1,66 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{geometry}
+\geometry{a4paper}
+
+\usepackage[counterclockwise]{rotating}
+
+\usepackage{amssymb,ebproof,enumerate}
+
+\usepackage{minted}
+\usemintedstyle{emacs}
+\setminted[gap]{bgcolor=gray!10,mathescape}
+
+\def\Circled#1{{\Large \textcircled{\small \bf #1}}}
+
+\def\exercise#1#2{%
+  \inputminted{gap}{gap/#1/#2.g}%
+  \inputminted{gap}{answer/#1/#2.txt}%
+}
+
+\def\inputproof#1#2{%
+  \begin{proof}[Proof of \Circled{#2}]
+    \input{proof/#1/#2.tex}
+  \end{proof}%
+}
+
+\title{%
+  Exercises from \\
+  {\sl A Friendly Introduction to Group Theory} \\
+  by David Nash%
+}
+
+\author{Eric Bailey}
+\date{November 26, 2017}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Preliminaries}
+
+\subsection{Sets}
+
+\begin{enumerate}[{\bf 1.}]
+\item
+  \begin{enumerate}[(a)]
+  \item \exercise{1.1}{1a} \newpage
+  \item \exercise{1.1}{1b}
+  \item \exercise{1.1}{1c}
+  \end{enumerate} \newpage
+
+\item
+  \begin{sideways}
+    \begin{minipage}{\textheight}
+      \inputproof{1.1}{2}
+      \inputproof{1.1}{4}
+    \end{minipage}
+  \end{sideways}
+\end{enumerate}
+
+\end{document}

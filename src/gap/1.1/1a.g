@@ -13,5 +13,5 @@ until not IsUnder30( n^2 );
 T := Set( List( Tuples( S, 3), Sum) );;
 
 
-# $\{ n \in \mathbb{Z}\ |\ n < 30\ \land\ \exists\ x,y,z \in \mathbb{Z}, x^2 + y^2 + z^2 = n \}$
+# $\{ n \in \mathbb{Z}\ |\ n < 30\ \land \ \exists\ x,y,z \in \mathbb{Z}, x^2 + y^2 + z^2 = n \}$
 Set( Filtered( T, IsUnder30 ) );

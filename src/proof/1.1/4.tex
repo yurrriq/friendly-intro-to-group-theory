@@ -1,0 +1,27 @@
+\begin{prooftree*}
+  \infer0{x \in R \setminus (S \cap T)}
+  \hypo{x \not \in S}
+  \infer2{x \in R \setminus S}
+
+  \infer0{x \in R \setminus (S \cap T)}
+  \hypo{x \not \in T}
+  \infer2{x \in R \setminus T}
+
+  \infer2{x \in (R \setminus S) \cup (R \setminus T)}
+  \infer1{R \setminus (S \cap T) \subseteq (R \setminus S) \cup (R \setminus T)}
+
+
+  \infer0{x \in (R \setminus S) \cup (R \setminus T)}
+  \hypo{x \in R \setminus S}
+  \infer2{x \in R\ \land\ x \not \in S}
+
+  \infer0{x \in (R \setminus S) \cup (R \setminus T)}
+  \hypo{x \in R \setminus T}
+  \infer2{x \in R\ \land\ x \not \in T}
+
+  \infer2{x \in R \setminus (S \cap T)}
+  \infer1{(R \setminus S) \cup (R \setminus T) \subseteq R \setminus (S \cap T)}
+
+
+  \infer2{R \setminus (S \cap T) = (R \setminus S) \cup (R \setminus T)}
+\end{prooftree*}

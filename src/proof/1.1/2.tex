@@ -1,0 +1,16 @@
+\begin{prooftree*}
+  \infer0{x \in R \cup (S \cap T)} \hypo{x \in R}
+  \infer2{x \in (R \cup S) \cap (R \cup T)}
+
+  \infer0{x \in R \cup (S \cap T)} \hypo{x \in S \cap T}
+  \infer2{x \in (R \cup S) \cap (R \cup T)}
+
+  \infer2{R \cup (S \cap T) \subseteq (R \cup S) \cap (R \cup T)}
+
+
+  \infer0{x \in R \cup (S \cap T)}
+  \infer1{x \in (R \cup S) \cap (R \cup T)}
+  \infer1{R \cup (S \cap T) \subseteq (R \cup S) \cap (R \cup T)}
+
+  \infer2{R \cup (S \cap T) = (R \cup S) \cap (R \cup T)}
+\end{prooftree*}
