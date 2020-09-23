@@ -1,1 +1,1 @@
-Cartesian( [ 1, 2, 3 ], [ 1, FLOAT.PI ] );
+Answer := Cartesian( [ 1, 2, 3 ], [ 1, FLOAT.PI ] );;

@@ -2,7 +2,7 @@
 pkgs.mkShell {
   buildInputs = with pkgs; (
     [
-      biber
+      # biber
       gap-full
       git
       gnumake

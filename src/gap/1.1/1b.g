@@ -20,4 +20,5 @@ IsAllOddSortedDigitsInt := function ( n )
 end;;
 
 
-Set( Filtered( [100 .. 999], IsAllOddSortedDigitsInt ) );
+Answer := Set( Filtered( [100 .. 999],
+                         IsAllOddSortedDigitsInt ) );;
